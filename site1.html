@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Traitement de photo astro</title>
+  </head>
+  <body>
+    <h1>Les bases du traitement de photo astronomique (noir et blanc)</h1>
+    <div class="grand_theme">
+      <p>
+        Bienvenue, sur ce site vous trouverez tout le nécessaire pour faire
+        un traitement de photo astronomique de base à l'aide du logiciel iris.
+        Le logiciel est entièrement en anglais et un peu brouillon au premier abord
+        mais pas de panique, une fois une bonne prise en main ce logiciel est très
+        agréable à utiliser. Je vous invite donc à suivre ce petit tuto et à naviguer
+        à l'aide du sommaire ci-dessous. Si vous souhaitez faire un traitement
+        en couleur, je vous invite à visiter la page dédiée en cliquant
+        <a href="site2.html" target="_blank">ici</a>.
+      </p>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#install">Installation de iris</a></li>
+        <li><a href="#config">Configuration de iris</a></li>
+        <li><a href="#compil">Première compilation de photos</a></li>
+      </ul>
+    </nav>
+
+  <div class="grand_theme">
+    <h3 id="install">Installation de iris :</h3>
+      <p>Pour installer le logiciel iris, il faut se rendre sur leur site et télécharger
+        le fichier zip (cliquez
+        <a href="http://www.astrosurf.com/buil/iris-software.html" target="_blank">
+          ici</a> pour le
+          télécharger).<br>
+          Une fois téléchargé, il faut le décompresser dans le dossier où vous
+          souhaitez que votre logiciel soit installé. Si tout se passe bien, vous devriez
+          avoir un interface comme celui ci :
+      </p>
+
+          <img id="libre" src="img/iris_menu.png" alt="menu de iris (rechargez la page si l'image ne s'affiche pas)">
+
+    </div>
+
+  <div class="grand_theme">
+    <h3 id="config">Configuration de iris :</h3>
+      <p>
+        Avant de commencer la configuration, je tiens à dire que ce tutoriel vous permettra
+        de faire une configuration "de base". Beaucoup de paramètres seront donc laissés par défaut.
+        De plus, ce tutoriel part du principe que vos photos sont au format <i>"CR2"</i>. Regardez bien
+        si c'est votre cas avant de vous lancer. Pour prendre des photos avec ce format,
+        je vous invite à regarder la notice de votre appareil photo ou à regarder un
+        tuto sur internet.
+      </p>
+
+    <div class="sous_theme">
+      <p>
+        Dans un premier temps, nous allons configurer les paramètres qui permettront
+        de définir l'espace de travail. Pour cela, il faut se rendre dans les volets
+        roulants en haut, il faut aller dans <i>"File"</i> puis sélectionnez  <i>"Settings"</i>.
+        Le premier paramètre à changer sera le <i>"Working path"</i>. Ce paramètre est très important
+        car c'est ici que vous allez définir où vos images vont être enregistrées. Pour
+        le choisir, il suffit de sélectionner les points de suspension. Deuxième
+        paramètre très important, le <i>"File type"</i>. C'est l'extension que vos photos doivent
+        avoir. Pour mon cas, je le mets en <i>"PIC"</i>, mais cela dépend de l'extension  de vos photos.
+        Pour connaître l'extension de vos photos, il faut faire un clic droit sur la photo
+        et sélectionner <i>"Propriétés"</i>. Le type d'extension sera marqué sur à côté de <i>"Type du fichier"</i>.
+      </p>
+
+            <img src="img/settings.jpg" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)">
+
+    </div>
+
+    <div class="sous_theme">
+
+          <img src="img/iris_app_photo1.jpg" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="700" height="auto">
+
+      <p>
+        Une fois cela fait, on va effectuer un réglage en fonction de l'appareil photo.
+        Avant de se faire, il faudra donc vous munir de la référence de votre appareil photo.
+        Pour commencer, il faut cliquer sur le petit appareil photo sur la barre des
+        menues rapides. Une nouvelle fenêtre devrait alors apparaître. Ici, nous réglerons
+        le <i>"Model"</i>. Dans le menu déroulant, il vous suffit de choisir le modèle de votre
+        votre appareil photo. Si votre modèle n'est pas dans la liste, il faudra se rendre
+        sur la page web du fabricant pour trouver la balance RGB. Vous pourrez alors
+        le remplir dans la section <i>"White balance"</i> en activant <i>"Apply"</i> et en entrant
+        vos valeurs. Dans notre cas, nous changerons aussi le <i>"RAW interpolation method"</i>
+        en le passant sur <i>"Linear"</i>.
+      </p>
+
+    </div>
+  </div>
+  <div class="grand_theme">
+    <h3 id="compil">Première compilation de photos :</h3>
+    <div class="sous_theme">
+      <p>
+        Maintenant que tout est enfin prêt, commençons le travail. Avant de se lancer
+        dans la compilation, il faut comprendre un phénomène très simple. Quand on prend
+        des photos à l'aide d'un télescope, très souvent les astres ne sont pas à la
+        même place d'une photo à l'autre (malgré le fait que vous puissiez avoir un moteur
+        intégré au télescope pour limiter ce phénomène).
+        Ce qui fait que si on veut les compiler, il est fort probable que les astres
+        se démultiplient. C'est pourquoi, nous devrons faire en sorte que les
+        astres soient au même emplacement sur la série de photos. On va donc faire un alignement des étoiles.
+        <br>
+        Bon, fini les explications, place à la pratique. Pour commencer, il va falloir
+        convertir vos photos au format <i>"PIC"</i>. Heureusement, iris propose de le faire
+        facilement. Pour se faire, il faudra aller dans le menu <i>"Digital photo"</i> puis dans
+        <i>"Decode RAW files..."</i>.
+      </p>
+
+            <img src="img/decode_raw_list.png" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="700" height="auto">
+
+    </div>
+    <div class="sous_theme">
+
+          <img src="img/decode_raw.jpg" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="700" height="auto">
+
+      <p>
+        Il vous faudra alors faire un glisser-déposer sur la
+        fenêtre principale (sous files .cr2). Si cela se passe bien, vous devriez
+        avoir le chemin de vos photos (dans mon cas c'est : "D:\Photo astro\Traitement Vacances\IC 405 (2)").
+        Il reste donc à mettre un nom dans <i>"Name"</i>. Je vous conseille vivement de mettre
+        des noms explicites. Cela évitera de vous mélanger les pinceaux à la fin, car vous
+        verrez qu'à la fin on aura beaucoup de fichier. Dans mon cas, je traite des photos
+        de l'amas IC-405, je vais donc les nommer <i>"IC_405-"</i>. Je finis toujours par un "-" (tiret du 6)
+        car iris va automatiquement ajouter un numéro à la fin (de 1 jusqu'au nombre de photo entrées).
+        Ensuite cliquez sur <i>"->CFA"</i> pour convertir vos photos au format "PIC".
+      </p>
+    </div>
+    <div class="sous_theme" id="img_centre">
+      <p>
+        Si vous vous souvenez bien, nous allons faire l'alignement des étoiles.
+        Dans le menu, cliquez sur <i>"Processing"</i> puis <i>"Stellar registration..."</i>.
+        Une nouvelle fenêtre apparaît. Il faudra tout d'abord renseigner
+        <i>"Input generic name"</i> qui est le nom que vous avez attribué à l'étape
+        précédente. Le <i>"Output generic name"</i> sera le nom donné une fois l'alignement fait.
+        Personnellement, je les nomme comme mon ancien nom mais avec un r à la fin.
+        Je choisis donc "IC_405r-". Il faut aussi renseigner le nombre de photos
+        dans <i>"Number"</i>.
+      </p>
+
+        <img src="img/stellar_registration.jpg" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="300" height="auto">
+
+      <p>
+        Pour les prochains renseignements, je vais vous demander de me
+        faire confiance, si vous voulez plus de détail, je vous invite à regarder
+        par vous même sur internet.
+        Pour nous, on fera avec les options <i>"Global matching"</i> et <i>"Quadratic"</i>.
+        En fonction de la puissance de votre ordinateur et en fonction du nombre
+        de photos l'opération sera plus ou moins longue (cela peut devenir très long
+        si vous avez beaucoup de photos !).
+    </p>
+    </div>
+    <div class="sous_theme">
+      <p>
+        Aller courage, c'est la dernière étape avant d'avoir une votre image !
+        Si vous avez bien suivi, on va donc effectuer la compilation. Pour ce faire,
+        rendez-vous dans <i>"Processing"</i> puis <i>"Add a sequence..."</i>. Une nouvelle fois,
+        une nouvelle fenêtre va s'ouvrir. Nous aurons deux champs à compléter. Le premier
+        <i>"Input generic name"</i> qui est le nom des photos qui sont alignées.
+        Et j'insiste bien sur le fait que c'est le nom des photos qui sont alignés
+        (celles qui ont subi l'étape d'avant !!!).
+        Encore une fois, il faudra entrer le nombre de photos dans <i>"Number"</i>.
+        Sinon, pensez à vérifier que l'option <i>"Arithmetic"</i> est cochée.
+
+            <img src="img/add_sequence.jpg" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="300" height="auto">
+
+      </p>
+    </div>
+    <div class="sous_theme">
+
+          <img src="img/threshold.jpg" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="500" height="auto">
+
+      <p>
+        Si vous ne voyez pas grand-chose, pas de panique c'est normal. Appuyez
+        sur le bouton avec les deux petites barres dans le menu. Une petite fenêtre
+        nommée <i>"Threshold"</i> apparaît. Cliquez sur <i>"Auto"</i>. Pour voir l'entièreté de
+        votre image, zoomer ou dézoomer à l'aide des deux logos bleu dans le menu.
+        Bravo, tu as fini ton premier traitement de photo !!! N'oublies surtout pas
+        de la sauvegarder.
+      </p>
+
+    </div>
+  </div>
+    <div class="sous_theme">
+      <p>
+        Voilà ce que cela a donné de mon côté :
+      </p>
+
+            <img id="img_fin" src="img/ic_405.png" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="500" height="auto">
+
+    </div>
+  </body>
+</html>

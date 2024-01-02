@@ -1,0 +1,29 @@
+html{
+  font-size: 20px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  background-image: url(img/m_81.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow: scroll;
+}
+
+div.path{
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 2px solid red;
+  padding: 15px;
+}
+div.path > p{
+  margin-right: 0;
+  margin-left: 0;
+  display: inline-block;
+  width: 35%
+}
+div.path > figure{
+  margin-left: 10%;
+  width: 35%;
+  display: inline-block;
+
+}

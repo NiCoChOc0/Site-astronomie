@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Traitement de photo astro</title>
+  </head>
+  <body>
+    <h1>Les bases du traitement de photo astronomique (les photos en couleur)</h1>
+  <div class=grand_theme>
+    <p>
+      Bienvenue, sur ce site vous trouverez tout le nécessaire pour faire
+      un traitement de photo astronomique de base à l'aide du logiciel iris.
+      Tout d'abord, je vous invite à suivre le premier tutoriel si ce n'est pas fait
+      (cliquez <a href="site1.html" target="_blank">ici</a> pour y accéder).
+      Dans ce tutoriel, nous réutiliserons les bases du précédent, ce qui signifie qu'il
+      sera estimé que vous connaissez déjà les premières bases. Je vous conseille
+      aussi de nommer les images comme je le fais pour éviter les confusions.
+    </p>
+  </div>
+
+  <nav>
+    <ul>
+      <li class="ref"><a href="#prerequis">Quelques pré requis à bien comprendre</a></li>
+      <li class="ref"><a href="#FDO">Réaliser les flat, dark et offset</a></li>
+      <li class="ref"><a href="#trait">Traitement, alignement et addition de séquence</a></li>
+      <li class="ref"><a href="#command">Découverte de commande pour faire un traitement en couleur</a></li>
+    </ul>
+  </nav>
+
+<div class="grand_theme">
+  <h3 id="prerequis">Quelques pré requis à bien comprendre :</h3>
+    <p>
+      Pour avoir une image la plus proche du réelle, il faut faire en sorte de
+      réduire un maximum les "erreurs" (que l'on appelle bruit) des appareils photos.
+      Pour résoudre ce problème, on utilise des photos qui permettent de réduire
+      ses bruits. On va découvrir à quoi servent chacun et comment les faire.
+    </p>
+    <ul>
+      <li><h4>Les darks :</h4></li>
+    <div class="sous_theme">
+      <p>
+        Créer des darks permet de supprimer le signal thermique parasite de votre
+        capteur photo.
+
+        Le signal thermique apparaît suivant la température du capteur, une température
+        qui évolue avec des temps de poses plus élevés, mais de l’environnement également,
+        qui va influencer la température du capteur. Les pixels affectés le sont
+        indépendamment, le signal thermique ne sera pas égal d’un pixel à l’autre.
+        Certains apparaîtront plus tôt, d’autres à de plus hautes températures,
+        ce qui crée un effet granuleux. Lorsqu’un photosite est saturé alors qu’il ne
+        devrait pas, cela crée des points blancs, dits pixels chauds éparpillés sur
+        la photo et qui augmentent en nombre avec la durée d’utilisation de l’appareil
+        photo, faisant chauffer le capteur. Ce seront toujours les mêmes pixels qui
+        seront affectés.
+        <br>
+        Pour réaliser un dark, il suffit de mettre le capuchon sur votre objectif,
+        et de faire une série de photos (une dizaine devrait largement suffir).
+
+        Et c'est tout, rien de plus simple. Faites cependant attention de faire
+        les photos dans les mêmes conditions, c'est très important.
+
+        Voilà un exemple de dark :
+      </p>
+
+            <img src="img/dark_ic.jpg" alt="menu de iris (rechargez la page si l'image ne s'affiche pas)" width="500" height="auto">
+
+    </div>
+
+
+      <li><h4>Les offsets :</h4></li>
+    <div class="sous_theme">
+
+          <img src="img/offset.jpg" alt="menu de iris (rechargez la page si l'image ne s'affiche pas)" width="500" height="auto">
+
+      <p>
+        Aussi appelés BIAS, les offsets permettent de supprimer le signal de lecture
+        (ou signal BIAS) qui marque l’image numérisée par l’appareil photo.
+        Le signal OFFSET se retrouve sur chaque image brute que l’on réalise.
+        Ce signal est généré volontairement par l’appareil photo car il ne peut y
+        avoir de valeur négative sur les pixels. Ainsi un appareil photo ne photographiera
+        jamais un noir total, il persistera toujours des nuances propres à chaque pixel,
+        partantes vers un gris très très faible et foncé.
+        On cherche à supprimer ce signal parasite avec les fichiers OFFSET pour retrouver
+        une valeur de 0 dans les noirs sur l’image finale.
+        <br>
+        Pour réaliser un offset, il faudra encore se munir du capuchon. C'est le même procédé
+        que pour les darks. Mais cette fois-ci, il faut régler son appareil photo
+        sur le temps de pose minimum et avec le minimum de temps d'exposition.
+        Encore une fois, faites-en une dizaine.
+
+        Voilà un exemple d'offset (je sais comme ça c'est pas très parlant comme image).
+      </p>
+
+
+    </div>
+
+      <li><h4>Les flats :</h4></li>
+    <div class="sous_theme">
+      <p>
+        La création de flats ou aussi appelés PLU (pour Plage de Lumière Uniforme)
+        permet de corriger les défauts d’optique de l’objectif ou télescope.
+        Il corrige le vignetage et les poussières présentes sur les optiques et le capteur.
+        Le vignetage est l’assombrissement des 4 coins de l’image. Il est plus ou moins
+        prononcé suivant la qualité et conception de l’optique.
+        Quant aux poussières, elles se représentent généralement par des taches
+        sombres aléatoirement posées sur la photo. Même en étant très maniaque de la
+        propreté avec son matériel, c’est un phénomène qui reviendra quand même,
+        à moins de faire de la photographie en salle blanche et être équipé d’une
+        combinaison qui ne laisse sortir que vos yeux =). Procédez avec 10 à 20 FLATs
+        environ est déjà bien assez suffisant, le bruit ne sera pas excessivement présent
+        sur ce genre d’image puisque le signal sera majoritaire.
+        <br>
+        Faire des flats est plus compliqué que de faire des darks et des offsets.
+        Pour ce faire, il faut prendre des photos avec une source de lumière uniforme.
+        Chacun à sa petite astuce pour le faire mais si vous débutez, je vais vous donner
+        la mienne. Devant l'objectif, il faut mettre une feuille blanche que vous éclairez
+        avec une lumière blanche (flash de téléphone, lampe torche, ou autre).
+        Il ne vous reste plus qu'à prendre vos photos.
+
+        Sur cette exemple on voit bien à quoi correspond le flat :
+      </p>
+
+            <img src="img/flat_ic.jpg" alt="menu de iris (rechargez la page si l'image ne s'affiche pas)" width="500" height="auto">
+
+
+    </div>
+    </ul>
+  </div>
+
+<div class="grand_theme">
+  <h3 id="FDO">Réaliser les flat, dark et offset :</h3>
+  <p>
+    Maintenant, commençons le traitement grâce à iris. Dans un premier temps,
+    il va falloir les décoder en <i>"CR2"</i> (faites un décodage pour chaque catégorie
+    pour travailler avec les bons noms !). Je vous laisse aller voir l'ancien tutoriel
+    si vous ne vous souvenez plus comment faire.
+  </p>
+
+  <ul>
+      <li><h4>L'offset :</h4></li>
+  <div class="sous_theme">
+    <p>
+      Commençons par l'offset. Dans le menu, choisissez <i>"Preprocessing"</i> puis
+      <i>"Make an offset..."</i>. Dans <i>"Generic name"</i>, je vous conseille de mettre "o-"
+      pour vous souvenir que ce sont des offsets, mais mettez le nom de vos photos
+      lorsque vous les avez décodées. Entrez votre nombre de photos dans
+      <i>"Number"</i>. Cliquez sur <i>"Ok"</i>. Un rapide chargement se fait, et votre image d'offset
+      apparaît. N'oubliez pas de la sauvegarder. Personnellement, je l'appelle "offset".
+    </p>
+
+          <img src="img/make_off.png" alt="menu de iris (rechargez la page si l'image ne s'affiche pas)" width="300" height="auto">
+
+  </div>
+
+
+
+    <li><h4>Le dark :</h4></li>
+  <div class="sous_theme">
+
+        <img src="img/make_dark.png" alt="menu de iris (rechargez la page si l'image ne s'affiche pas)" width="300" height="auto">
+
+    <p>
+      Pour faire le dark, allez dans <i>"Preprocessing"</i> puis <i>"Make a dark..."</i>. Encore
+      une fois, dans <i>"Generic name"</i> mettez le nom de vos darks. Pour ma part c'est
+      "d-". Dans <i>"Offset image"</i>, il faut mettre le nom de votre image d'offset fait
+      précédemment. Pour moi, c'est "offset". Et bien sûr, dans <i>"Number"</i>, le nombre
+      de dark que vous avez. N'oubliez pas de sauvegarder.
+    </p>
+
+
+  </div>
+
+    <li><h4>Le flat :</h4></li>
+  <div class="sous_theme">
+    <p>
+      Pour faire le flat, allez dans <i>"Preprocessing"</i> puis <i>"Make a dark..."</i>. Encore
+      une fois, dans <i>"Generic name"</i> mettez le nom de vos darks. Pour ma part c'est
+      "f-". Dans <i>"Offset image"</i>, il faut mettre le nom de votre image d'offset fait
+      précédemment. Pour moi, c'est "offset". Et bien sûr, dans <i>"Number"</i>, le nombre
+      de dark que vous avez. Ici, nous laisserons <i>"Normalisation value"</i> à 5000.
+      N'oubliez pas de sauvegarder.
+    </p>
+
+          <img src="img/make_flat.png" alt="menu de iris (rechargez la page si l'image ne s'affiche pas)" width="300" height="auto">
+
+
+  </div>
+
+    <li><h4>A la recherche des derniers mauvais pixels :</h4></li>
+    <p>
+      Pour ce faire, il vous faut ouvrir votre photo dark depuis iris. Ensuite,
+      appuyez sur le logo à gauche de celui de l'appareil photo. Une fenêtre appelée
+      <i>"Command"</i> s'ouvre. Ecrivez alors la commande <i>">FIND_HOT COSME 180"</i>. Une autre
+      fenêtre va s'ouvrir avec quelques informations. Le seul que nous regarderons
+      sera <i>"Hot pixels number"</i>. Il faut qu'il soit assez proche de 500. Si ce n'est pas le cas,
+      il faut refaire la commande mais avec une valeur différente. Avec plusieurs essais
+      on finit par y arriver. Dans mon cas,la valeur adaptée est 104, la commande
+      est donc <i>">FIND_HOT COSME 104"</i>. Cela créera un fichier "cosme" qui nous sera utile
+      plus tard.
+    </p>
+
+        <img id="libre" src="img/hot_cosme.jpg" alt="menu de iris (rechargez la page si l'image ne s'affiche pas)" width="700" height="auto">
+
+
+
+  </ul>
+</div>
+
+<div class="grand_theme">
+  <h3 id="trait">Traitement, alignement et addition de séquence :</h3>
+  <div class="sous_theme">
+  <p>
+    Pour la prochaine étape, nous allons appliquer les dark, flat, offset et cosme
+    à nos photos. Pour se faire, rendez-vous dans <i>"Preprocessing"</i> puis
+    <i>"Automatic preprocessing (1)..."</i>. Sur cette nouvelle fenêtre, nous remplirons
+    tous les champs (une fois n'est pas coutume) :
+
+    <img src="img/pretraitement.png" alt="menu de iris (rechargez la page si l'image ne s'affiche pas)" width="300" height="auto">
+
+    <ul>
+      <li>
+        <i>"Input generic name"</i> est le nom de votre série de photos à traiter. Dans mon cas
+        c'est "ic_405-".
+      </li>
+      <li><i>"Offset"</i> est le nom de votre image d'offset.</li>
+      <li><i>"Dark"</i> est le nom de votre image de dark.</li>
+      <li><i>"Flat-field"</i> est le nom de votre image de flat.</li>
+      <li><i>"Cosme file"</i> il faut mettre cosme (c'est le fichier obtenue grâce à hot cosme).</li>
+      <li>
+        <i>"Output generic name"</i> est le nom de votre série de photos une fois le prétraitement
+        effectué. Je vous conseille de simplement mettre un p pour prétraitement devant votre nom d'origine.
+        Dans mon cas c'est "Pic_405-".
+      </li>
+      <li><i>"Number"</i> est le nombre d'images de votre série de photos.</li>
+      <li>Pensez à bien décocher <i>"Dark optimize"</i></li>
+    </ul>
+  </p>
+
+
+</div>
+
+<div class="sous_theme">
+  <p>
+    Maintenant, nous allons convertir les images en images avec des couleurs.
+    Pour ce faire, direction <i>"Digital photo"</i> puis <i>"Sequence CFA conversion..."</i>.
+  </p>
+
+    <p>
+      Une nouvelle fenêtre s'ouvre. Il faudra remplir :
+      <img src="img/cfa_menu.png" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="500" height="auto">
+
+      <ul>
+        <li><i>"Generic input name"</i> qui correspond au nom des images ayant subit le prétraitement</li>
+        <li>
+          <i>"Generic output name"</i> qui sera le nom des photos une fois coloré. Je vous
+          conseille de mettre "c" pour CFA en préfixe de votre nom.
+        </li>
+        <li><i>"Number"</i> encore et toujours, le nombre de photos que vous avez.</li>
+      </ul>
+    </p>
+</div>
+
+<div class="sous_theme">
+  <p>
+    Ensuite, il faudra faire l'alignement des images ainsi que les additionner.
+    Si vous ne savez plus comment faire, je vous renvoie vers <a href="site1.html" target="_blank">le premier tuto</a>.
+    Pour ma part, voilà le résultat :
+  </p>
+  <img src="img/ic_405_fin.jpg" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="500" height="auto">
+</div>
+
+  <p>
+    Ne soyez pas déçu si l'on ne voit pas grand chose, on va commencer les traitements
+    de la photo.
+  </p>
+</div>
+
+<div class="grand_theme">
+  <h3 id="command">Découverte de commande pour faire un traitement en couleur</h3>
+<div class="sous_theme">
+  <p>
+    Pour commencer, je ne sais pas si vous avez remarqué mais les bords de l'image
+    ne sont pas très propres. Pour ce faire, ouvrez le menu <i>"command"</i> et tapez-y la
+    commande <i>">win"</i>. Normalement, votre curseur devient une croix. Choisissez alors
+    l'angle supérieur gauche de votre photo, puis l'angle inférieur droit. Cela va rogner
+    votre photo aux endroits où l'addition a donné un mauvais rendu.
+  </p>
+
+  <img src="img/command_win.png" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="300" height="auto">
+
+
+</div>
+
+<div class="sous_theme">
+  <img src="img/x1.jpg" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="500" height="auto">
+
+  <p>
+    Si vous l'avez fermé, réouvrez le menu commande. Mais avant d'entrer votre commande,
+    il va falloir sélectionner un espace de votre image. Avant de commencer, essayez de trouver
+    un espace de votre image assez éloingé de votre objet observé qui est censé correspondre
+    au noir de votre photo. Dans le menu, appuyez sur <i>"x1"</i>.
+  </p>
+</div>
+
+<div class="sous_theme">
+  <p>
+    Ensuite, à l'aide des barres de défilement, rendez-vous sur l'endroit choisi précédemment.
+    Sélectionnez cet endroit en maintenant le clic gauche de la souris. Il est alors temps
+    de rentrer la commande <i>">black"</i> dans le menu commande.
+  </p>
+
+    <img src="img/command_black.png" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="300" height="auto">
+
+
+</div>
+
+<div class="sous_theme">
+  <img src="img/threshold.jpg" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="500" height="auto">
+
+  <p>
+    Si vous ne voyez pas grand-chose, pas de panique c'est normal. Appuyez sur
+    le bouton avec les deux petites barres dans le menu. Une petite fenêtre nommée
+    <i>"Threshold"</i> apparaît. Cliquez sur <i>"Auto"</i>. Pour voir l'entièreté de votre image,
+    zoomer ou dézoomer à l'aide des deux logos bleu dans le menu. Bravo, tu as fini
+    ton premier traitement de photo en couleur !!! N'oublies surtout pas de la
+    sauvegarder.
+  </p>
+
+
+
+</div>
+</div>
+<div class="sous_theme">
+  <p>
+    Voilà le rendu final pour ma part :
+  </p>
+
+        <img id="img_fin" src="img/ic_405_trait.jpg" alt="menu Settings (rechargez la page si l'image ne s'affiche pas)" width="500" height="auto">
+
+</div>
+
+
+
+  </body>
+</html>
