@@ -1,4 +1,15 @@
 # Les bases du traitement de photo astronomique (noir et blanc)
+
+## Quelques photos finies
+
+![](img/results/m13.jpg)
+Amas stellaire M13
+![](img/results/m51.jpg)
+Galaxie M51
+![](img/results/ngc7023.jpg)
+Nébuleuse NGC7023 (de l'iris)
+
+# Site web
 > PS : le contenu de ce readme correspond au fichier `site1.html`. Pour voir le site, il faut cloner/télecharger le git
 
 Bienvenue ! Sur ce site, vous trouverez tout le nécessaire pour faire un traitement de photo astronomique de base à l'aide du logiciel Iris.
